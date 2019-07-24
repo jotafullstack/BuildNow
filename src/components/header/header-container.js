@@ -1,7 +1,31 @@
 import React, { Component } from "react";
 import "./header.css";
 
-import { Navbar, Nav, Button } from "react-bootstrap";
+import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
+
+class LinkMenu extends Component {
+  render() {
+    if (!this.props.subItem) {
+      return (
+        <Nav.Link key={this.props.title} href={this.props.url}>
+          {this.props.title}
+        </Nav.Link>
+      );
+    } else {
+      return (
+        <NavDropdown title={this.props.title} id="basic-nav-dropdown">
+          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+          <NavDropdown.Divider />
+          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+        </NavDropdown>
+      );
+    }
+  }
+}
+
+// return <LinkMenu title={link.title} url={link.url} />;
 
 class Header extends Component {
   /* Construtor for getting props and setting states */
@@ -20,7 +44,7 @@ class Header extends Component {
   render() {
     return (
       <header>
-        {/* If state isShow is true, show header if state isShow is false, hide header */}
+        {/* Show or Hide Header */}
         {this.state.isShow ? (
           <Navbar bg={this.props.theme} expand="lg">
             <Navbar.Brand href="#home">Logo</Navbar.Brand>
@@ -34,9 +58,11 @@ class Header extends Component {
                     ? this.props.links.map(link => {
                         /* Return a single link */
                         return (
-                          <Nav.Link key={link.title} href={link.url}>
-                            {link.title}
-                          </Nav.Link>
+                          <LinkMenu
+                            title={link.title}
+                            url={link.url}
+                            subItem={link.subItem}
+                          />
                         );
                       })
                     : null}

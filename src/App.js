@@ -18,10 +18,10 @@ function App() {
         menuShow={true}
         linksShow={true}
         links={[
-          { title: "Products", url: "" },
-          { title: "Agency", url: "" },
-          { title: "Docs", url: "" },
-          { title: "Contact Us", url: "" }
+          { title: "Products", url: "", subItem: false },
+          { title: "Agency", url: "", subItem: false },
+          { title: "Docs", url: "", subItem: false },
+          { title: "Contact Us", url: "", subItem: true }
         ]}
         ctaShow={true}
         cta={{ title: "More Information", url: "", variant: "primary" }}
