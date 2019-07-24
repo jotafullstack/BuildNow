@@ -5,7 +5,7 @@ import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 
 class LinkMenu extends Component {
   render() {
-    if (!this.props.subItem) {
+    if (!this.props.subItemShow) {
       return (
         <Nav.Link key={this.props.title} href={this.props.url}>
           {this.props.title}
@@ -14,11 +14,13 @@ class LinkMenu extends Component {
     } else {
       return (
         <NavDropdown title={this.props.title} id="basic-nav-dropdown">
-          <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-          <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-          <NavDropdown.Divider />
-          <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+          {this.props.subItens.map(subItem => {
+            return (
+              <NavDropdown.Item href={subItem.url}>
+                {subItem.title}
+              </NavDropdown.Item>
+            );
+          })}
         </NavDropdown>
       );
     }
@@ -61,7 +63,8 @@ class Header extends Component {
                           <LinkMenu
                             title={link.title}
                             url={link.url}
-                            subItem={link.subItem}
+                            subItemShow={link.subItemShow}
+                            subItens={link.subItens}
                           />
                         );
                       })

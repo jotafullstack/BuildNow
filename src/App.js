@@ -18,10 +18,18 @@ function App() {
         menuShow={true}
         linksShow={true}
         links={[
-          { title: "Products", url: "", subItem: false },
-          { title: "Agency", url: "", subItem: false },
-          { title: "Docs", url: "", subItem: false },
-          { title: "Contact Us", url: "", subItem: true }
+          { title: "Products", url: "", subItemShow: false },
+          { title: "Agency", url: "", subItemShow: false },
+          { title: "Docs", url: "", subItemShow: false },
+          {
+            title: "Contact Us",
+            url: "",
+            subItemShow: true,
+            subItens: [
+              { title: "Teste", url: "" },
+              { title: "fcgvnbhmjn", url: "" }
+            ]
+          }
         ]}
         ctaShow={true}
         cta={{ title: "More Information", url: "", variant: "primary" }}
