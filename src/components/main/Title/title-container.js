@@ -29,7 +29,7 @@ class Title extends Component {
       >
         <Col xs={12} sm={12} md={12} lg={12}>
           <h1 style={{ fontSize: "7.5rem" }}>{this.props.description}</h1>
-          {this.state.over ? <BuilderTooltip /> : null}
+          {this.state.over && this.props.builder ? <BuilderTooltip /> : null}
         </Col>
       </Row>
     );
