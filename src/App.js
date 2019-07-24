@@ -4,6 +4,7 @@ import "./App.css";
 // Header
 import Header from "./components/header";
 
+// Header Configs
 var HeaderConfig = {
   isShow: true,
   theme: "light",
@@ -19,7 +20,7 @@ var HeaderConfig = {
       title: "Contact Us",
       url: "",
       subItemShow: false,
-      subItens: [{ title: "Teste", url: "" }, { title: "fcgvnbhmjn", url: "" }]
+      subItens: [{ title: "Teste 1", url: "" }, { title: "Teste 2", url: "" }]
     }
   ],
   ctaShow: false,

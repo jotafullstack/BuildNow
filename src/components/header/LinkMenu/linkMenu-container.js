@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 
-import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
+import { Nav, NavDropdown } from "react-bootstrap";
 
 class LinkMenu extends Component {
   render() {

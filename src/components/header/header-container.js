@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./header.css";
 
-import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
+import { Navbar, Nav, Button } from "react-bootstrap";
 
 /* LinkMenu Component Props its title, url, subItemShow, subItens */
 import LinkMenu from "./LinkMenu";
