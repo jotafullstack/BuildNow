@@ -1,21 +1,27 @@
 import React, { Component } from "react";
 import "./main.css";
 
-import { Container } from "react-bootstrap";
+import { Container, Image } from "react-bootstrap";
 
 class Main extends Component {
   /* Construtor for getting props and setting states */
   constructor(props) {
     super(props);
-    /* For Show or Hide Component */
     this.state = {
-      isShow: this.props.isShow
+      // For Show or Hide Component
+      isShow: this.props.isShow,
+      // Allow the Container to fill all of it's availble horizontal space.
+      fluid: true
     };
   }
 
   /* Render Component */
   render() {
-    return <Container>sfdfs</Container>;
+    return (
+      <Container fluid={this.state.fluid} style={{ backgroundColor: "red" }}>
+        <Image src="holder.js/100px250" fluid />
+      </Container>
+    );
   }
 }
 
