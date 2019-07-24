@@ -5,9 +5,9 @@ import "./App.css";
 import Header from "./components/header";
 
 // Footer
-import Footer from "./components/footer";
+//import Footer from "./components/footer";
 
-import { Button } from "react-bootstrap";
+//import { Button } from "react-bootstrap";
 
 function App() {
   return (
@@ -15,6 +15,7 @@ function App() {
       <Header
         isShow={true}
         theme={"light"}
+        menuShow={true}
         linksShow={true}
         links={[
           { title: "Products", url: "" },
@@ -22,6 +23,8 @@ function App() {
           { title: "Docs", url: "" },
           { title: "Contact Us", url: "" }
         ]}
+        ctaShow={true}
+        cta={{ title: "More Information", url: "", variant: "primary" }}
       />
       {/*<Button variant="success">Success</Button>
       <Footer />*/}
