@@ -4,6 +4,9 @@ import "./App.css";
 // Header
 import Header from "./components/header";
 
+// Main
+import Main from "./components/main";
+
 // Header Configs
 var HeaderConfig = {
   isShow: true,
@@ -13,9 +16,14 @@ var HeaderConfig = {
   menuShow: true,
   linksShow: true,
   links: [
-    { title: "Products", url: "", subItemShow: false },
-    { title: "Agency", url: "", subItemShow: false },
-    { title: "Docs", url: "", subItemShow: false },
+    {
+      title: "Qualquer Coisa",
+      url: "",
+      subItemShow: false,
+      subItens: [{ title: "Teste 1", url: "" }, { title: "Teste 2", url: "" }]
+    },
+    { title: "Agency", url: "", subItemShow: false, subItens: [] },
+    { title: "Docs", url: "", subItemShow: false, subItens: [] },
     {
       title: "Contact Us",
       url: "",
@@ -25,6 +33,13 @@ var HeaderConfig = {
   ],
   ctaShow: false,
   cta: { title: "More Information", url: "", variant: "primary" }
+};
+
+var MainConfig = {
+  isShow: true
+  /*moduleABCShow: false,
+  moduleDEFShow: false,
+  moduleGHIShow: false*/
 };
 
 function App() {
@@ -41,6 +56,7 @@ function App() {
         ctaShow={HeaderConfig.ctaShow}
         cta={HeaderConfig.cta}
       />
+      <Main isShow={MainConfig.isShow} />
     </div>
   );
 }
