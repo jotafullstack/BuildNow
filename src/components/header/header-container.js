@@ -3,9 +3,8 @@ import "./header.css";
 
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 
+/* LinkMenu Component Props its title, url, subItemShow, subItens */
 import LinkMenu from "./LinkMenu";
-
-// return <LinkMenu title={link.title} url={link.url} />;
 
 class Header extends Component {
   /* Construtor for getting props and setting states */
@@ -14,6 +13,7 @@ class Header extends Component {
     /* For Show or Hide Component */
     this.state = {
       isShow: this.props.isShow,
+      brandShow: this.props.brandShow,
       menuShow: this.props.menuShow,
       linksShow: this.props.linksShow,
       ctaShow: this.props.ctaShow
@@ -27,7 +27,11 @@ class Header extends Component {
         {/* Show or Hide Header */}
         {this.state.isShow ? (
           <Navbar bg={this.props.theme} expand="lg">
-            <Navbar.Brand href="#home">Logo</Navbar.Brand>
+            {/* Brand Logo */}
+            {this.state.brandShow ? (
+              <Navbar.Brand href="#home">Logo</Navbar.Brand>
+            ) : null}
+            {/* Add Menu Toogle in Mobile*/}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             {/* Show or hide links */}
             {this.state.menuShow ? (

@@ -15,6 +15,7 @@ function App() {
       <Header
         isShow={true}
         theme={"light"}
+        brandShow={true}
         menuShow={true}
         linksShow={true}
         links={[
