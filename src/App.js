@@ -41,15 +41,14 @@ var MainConfig = {
   fluid: true,
   titleShow: true,
   title: {
+    builder: true,
     description: "Title"
   },
   subTitleShow: true,
   subTitle: {
+    builder: true,
     description: "Subtitle"
   }
-  /*moduleABCShow: false,
-  moduleDEFShow: false,
-  moduleGHIShow: false*/
 };
 
 function App() {

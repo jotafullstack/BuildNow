@@ -1,0 +1,8 @@
+.Builder-Hoverable {
+  padding: 2px;
+}
+
+.Builder-Hoverable:hover {
+  padding: 0px;
+  border: 2px solid blue;
+}

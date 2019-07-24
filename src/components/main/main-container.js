@@ -32,10 +32,16 @@ class Main extends Component {
     return (
       <Container fluid={this.state.fluid}>
         {this.state.titleShow ? (
-          <Title description={this.props.title.description} />
+          <Title
+            builder={this.props.title.builder}
+            description={this.props.title.description}
+          />
         ) : null}
         {this.state.subTitleShow ? (
-          <SubTitle description={this.props.subTitle.description} />
+          <SubTitle
+            builder={this.props.subTitle.builder}
+            description={this.props.subTitle.description}
+          />
         ) : null}
       </Container>
     );
