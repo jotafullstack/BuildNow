@@ -16,6 +16,7 @@ function App() {
         isShow={true}
         theme={"light"}
         brandShow={true}
+        brand={{ title: "Logo", url: "" }}
         menuShow={true}
         linksShow={true}
         links={[

@@ -29,7 +29,9 @@ class Header extends Component {
           <Navbar bg={this.props.theme} expand="lg">
             {/* Brand Logo */}
             {this.state.brandShow ? (
-              <Navbar.Brand href="#home">Logo</Navbar.Brand>
+              <Navbar.Brand href={this.props.brand.url}>
+                {this.props.brand.title}
+              </Navbar.Brand>
             ) : null}
             {/* Add Menu Toogle in Mobile*/}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
