@@ -7,23 +7,23 @@ import BuilderTooltip from "../BuilderTooltip";
 class Title extends Component {
   constructor(props) {
     super(props);
-    this.state = { over: true };
+    this.state = { over: false };
   }
 
   mouseOver() {
-    console.log("Mouse over!!!");
     this.setState({ over: true });
   }
 
   mouseOut() {
-    console.log("Mouse out!!!");
     this.setState({ over: false });
   }
 
   render() {
     return (
       <Row
-        className={this.state.over ? "Builder-Hoverable" : null}
+        className={
+          this.state.over && this.props.builder ? "Builder-Hoverable" : null
+        }
         onMouseLeave={() => this.mouseOut()}
         onMouseEnter={() => this.mouseOver()}
       >
