@@ -9,7 +9,8 @@ class Header extends Component {
     super(props);
     /* For Show or Hide Component */
     this.state = {
-      isShow: this.props.isShow
+      isShow: this.props.isShow,
+      linksShow: this.props.linksShow
     };
   }
 
@@ -22,19 +23,23 @@ class Header extends Component {
           <Navbar bg={this.props.theme} expand="lg">
             <Navbar.Brand href="#home">Logo</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              {/* ml-auto para alinhar à direita, mr-auto para alinhar à esquerda */}
-              <Nav className="ml-auto">
-                {/* Mapping all links */}
-                {this.props.links.map(link => {
-                  return (
-                    <Nav.Link key={link.title} href={link.url}>
-                      {link.title}
-                    </Nav.Link>
-                  );
-                })}
-              </Nav>
-            </Navbar.Collapse>
+            {/* Show or hide links */}
+            {this.state.linksShow ? (
+              <Navbar.Collapse id="basic-navbar-nav">
+                {/* ml-auto para alinhar à direita, mr-auto para alinhar à esquerda */}
+                <Nav className="ml-auto">
+                  {/* Mapping all links */}
+                  {this.props.links.map(link => {
+                    /* Return a single link */
+                    return (
+                      <Nav.Link key={link.title} href={link.url}>
+                        {link.title}
+                      </Nav.Link>
+                    );
+                  })}
+                </Nav>
+              </Navbar.Collapse>
+            ) : null}
           </Navbar>
         ) : null}
       </header>

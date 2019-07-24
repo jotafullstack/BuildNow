@@ -15,10 +15,16 @@ function App() {
       <Header
         isShow={true}
         theme={"light"}
-        links={[{ title: "home", url: "" }, { title: "contact", url: "" }]}
+        linksShow={true}
+        links={[
+          { title: "Products", url: "" },
+          { title: "Agency", url: "" },
+          { title: "Docs", url: "" },
+          { title: "Contact Us", url: "" }
+        ]}
       />
-      <Button variant="success">Success</Button>
-      <Footer />
+      {/*<Button variant="success">Success</Button>
+      <Footer />*/}
     </div>
   );
 }
