@@ -4,11 +4,6 @@ import "./App.css";
 // Header
 import Header from "./components/header";
 
-// Footer
-//import Footer from "./components/footer";
-
-//import { Button } from "react-bootstrap";
-
 var HeaderConfig = {
   isShow: true,
   theme: "light",
@@ -45,8 +40,6 @@ function App() {
         ctaShow={HeaderConfig.ctaShow}
         cta={HeaderConfig.cta}
       />
-      {/*<Button variant="success">Success</Button>
-      <Footer />*/}
     </div>
   );
 }
