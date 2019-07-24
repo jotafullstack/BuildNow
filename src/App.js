@@ -7,14 +7,12 @@ import Header from "./components/header";
 // Footer
 import Footer from "./components/footer";
 
-
-
-import { Button } from 'react-bootstrap';
+import { Button } from "react-bootstrap";
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <Header isShow={true} theme={"light"} />
       <Button variant="success">Success</Button>
       <Footer />
     </div>
