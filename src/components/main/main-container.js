@@ -3,7 +3,10 @@ import "./main.css";
 
 import { Container, Row, Col, Image } from "react-bootstrap";
 
+/* Title Component */
 import Title from "./Title";
+
+/* Subtitle Component */
 import SubTitle from "./SubTitle";
 
 class Main extends Component {
@@ -14,7 +17,11 @@ class Main extends Component {
       // For Show or Hide Component
       isShow: this.props.isShow,
       // Allow the Container to fill all of it's availble horizontal space.
-      fluid: true
+      fluid: true,
+      // For Show or Hide Title Component
+      titleShow: true,
+      // For Show or Hide SubTitle Component
+      subtitleShow: true
     };
   }
 
@@ -24,8 +31,8 @@ class Main extends Component {
   render() {
     return (
       <Container fluid={this.state.fluid}>
-        <Title description={"Title"} xs={12} sm={12} md={12} lg={12} />
-        <SubTitle description={"Subtitle"} xs={12} sm={12} md={12} lg={12} />
+        {this.state.titleShow ? <Title description={"Title"} /> : null}
+        {this.state.subtitleShow ? <SubTitle description={"Subtitle"} /> : null}
       </Container>
     );
   }
