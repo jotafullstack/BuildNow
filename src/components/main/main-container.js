@@ -3,29 +3,8 @@ import "./main.css";
 
 import { Container, Row, Col, Image } from "react-bootstrap";
 
-class Title extends Component {
-  render() {
-    return (
-      <Row>
-        <Col xs={12} md={12}>
-          <h1>Title</h1>
-        </Col>
-      </Row>
-    );
-  }
-}
-
-class SubTitle extends Component {
-  render() {
-    return (
-      <Row>
-        <Col xs={12} md={12}>
-          <h2>Subtitle</h2>
-        </Col>
-      </Row>
-    );
-  }
-}
+import Title from "./Title";
+import SubTitle from "./SubTitle";
 
 class Main extends Component {
   /* Construtor for getting props and setting states */
@@ -45,8 +24,8 @@ class Main extends Component {
   render() {
     return (
       <Container fluid={this.state.fluid}>
-        <Title />
-        <SubTitle />
+        <Title description={"Title"} xs={12} sm={12} md={12} lg={12} />
+        <SubTitle description={"Subtitle"} xs={12} sm={12} md={12} lg={12} />
       </Container>
     );
   }
