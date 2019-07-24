@@ -8,15 +8,20 @@ class BuilderTooltip extends Component {
       <div
         style={{
           position: "absolute",
-          margin: "auto",
-          left: "0px",
           top: "0px",
           left: "0px",
-          right: "0px"
+          right: "0px",
+          bottom: "0px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          backgroundColor: "rgba(0, 0, 0, 0.1)"
         }}
       >
-        <Button variant="primary">Edit</Button>
-        <Button variant="primary">Remove</Button>
+        <Button style={{ marginRight: "10px" }} variant="info">
+          E
+        </Button>
+        <Button variant="danger">X</Button>
       </div>
     );
   }

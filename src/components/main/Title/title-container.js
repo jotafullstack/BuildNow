@@ -23,7 +23,7 @@ class Title extends Component {
   render() {
     return (
       <Row
-        className={this.props.builder ? "Builder-Hoverable" : null}
+        className={this.state.over ? "Builder-Hoverable" : null}
         onMouseLeave={() => this.mouseOut()}
         onMouseEnter={() => this.mouseOver()}
       >

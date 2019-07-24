@@ -6,5 +6,5 @@
 /* Add border if builder mode */
 .Builder-Hoverable:hover {
   padding: 0px;
-  border: 2px solid blue;
+  border: 2px solid #17a2b8;
 }
