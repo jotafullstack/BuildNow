@@ -19,9 +19,9 @@ class BuilderTooltip extends Component {
         }}
       >
         <Button style={{ marginRight: "10px" }} variant="info">
-          E
+          Edit
         </Button>
-        <Button variant="danger">X</Button>
+        <Button variant="danger">Remove</Button>
       </div>
     );
   }
