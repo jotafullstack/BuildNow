@@ -33,13 +33,13 @@ class Main extends Component {
       <Container fluid={this.state.fluid}>
         {this.state.titleShow ? (
           <Title
-            builder={this.props.title.builder}
+            builder={this.props.builder}
             description={this.props.title.description}
           />
         ) : null}
         {this.state.subTitleShow ? (
           <SubTitle
-            builder={this.props.subTitle.builder}
+            builder={this.props.builder}
             description={this.props.subTitle.description}
           />
         ) : null}

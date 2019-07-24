@@ -37,16 +37,16 @@ var HeaderConfig = {
 
 // Main Configs
 var MainConfig = {
+  // Builder Mode
+  builder: true,
   isShow: true,
   fluid: true,
   titleShow: true,
   title: {
-    builder: true,
     description: "Title"
   },
   subTitleShow: true,
   subTitle: {
-    builder: true,
     description: "Subtitle"
   }
 };
@@ -67,6 +67,7 @@ function App() {
       />
       <Main
         isShow={MainConfig.isShow}
+        builder={MainConfig.builder}
         fluid={MainConfig.fluid}
         titleShow={MainConfig.titleShow}
         title={MainConfig.title}

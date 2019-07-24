@@ -1,8 +1,22 @@
+/* For removing resize after hover */
 .Builder-Hoverable {
   padding: 2px;
 }
 
+/* Add border if builder mode */
 .Builder-Hoverable:hover {
   padding: 0px;
   border: 2px solid blue;
+}
+
+.builder-tooltip:hover {
+  display: block;
+  position: absolute;
+  margin: auto;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  align-items: center;
+  z-index: 1000000;
 }
