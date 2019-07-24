@@ -17,11 +17,11 @@ class Main extends Component {
       // For Show or Hide Component
       isShow: this.props.isShow,
       // Allow the Container to fill all of it's availble horizontal space.
-      fluid: true,
+      fluid: this.props.fluid,
       // For Show or Hide Title Component
-      titleShow: true,
+      titleShow: this.props.titleShow,
       // For Show or Hide SubTitle Component
-      subtitleShow: true
+      subTitleShow: this.props.subTitleShow
     };
   }
 
@@ -31,8 +31,12 @@ class Main extends Component {
   render() {
     return (
       <Container fluid={this.state.fluid}>
-        {this.state.titleShow ? <Title description={"Title"} /> : null}
-        {this.state.subtitleShow ? <SubTitle description={"Subtitle"} /> : null}
+        {this.state.titleShow ? (
+          <Title description={this.props.title.description} />
+        ) : null}
+        {this.state.subTitleShow ? (
+          <SubTitle description={this.props.subTitle.description} />
+        ) : null}
       </Container>
     );
   }

@@ -37,7 +37,16 @@ var HeaderConfig = {
 
 // Main Configs
 var MainConfig = {
-  isShow: true
+  isShow: true,
+  fluid: true,
+  titleShow: true,
+  title: {
+    description: "Title"
+  },
+  subTitleShow: true,
+  subTitle: {
+    description: "Subtitle"
+  }
   /*moduleABCShow: false,
   moduleDEFShow: false,
   moduleGHIShow: false*/
@@ -57,7 +66,14 @@ function App() {
         ctaShow={HeaderConfig.ctaShow}
         cta={HeaderConfig.cta}
       />
-      <Main isShow={MainConfig.isShow} />
+      <Main
+        isShow={MainConfig.isShow}
+        fluid={MainConfig.fluid}
+        titleShow={MainConfig.titleShow}
+        title={MainConfig.title}
+        subTitleShow={MainConfig.subTitleShow}
+        subTitle={MainConfig.subTitle}
+      />
     </div>
   );
 }
