@@ -12,7 +12,11 @@ import { Button } from "react-bootstrap";
 function App() {
   return (
     <div className="App">
-      <Header isShow={true} theme={"light"} />
+      <Header
+        isShow={true}
+        theme={"light"}
+        links={[{ title: "home", url: "" }, { title: "contact", url: "" }]}
+      />
       <Button variant="success">Success</Button>
       <Footer />
     </div>

@@ -25,8 +25,14 @@ class Header extends Component {
             <Navbar.Collapse id="basic-navbar-nav">
               {/* ml-auto para alinhar à direita, mr-auto para alinhar à esquerda */}
               <Nav className="ml-auto">
-                <Nav.Link href="#home">A</Nav.Link>
-                <Nav.Link href="#link">B</Nav.Link>
+                {/* Mapping all links */}
+                {this.props.links.map(link => {
+                  return (
+                    <Nav.Link key={link.title} href={link.url}>
+                      {link.title}
+                    </Nav.Link>
+                  );
+                })}
               </Nav>
             </Navbar.Collapse>
           </Navbar>
