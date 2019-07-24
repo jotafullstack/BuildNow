@@ -24,14 +24,14 @@ function App() {
           {
             title: "Contact Us",
             url: "",
-            subItemShow: true,
+            subItemShow: false,
             subItens: [
               { title: "Teste", url: "" },
               { title: "fcgvnbhmjn", url: "" }
             ]
           }
         ]}
-        ctaShow={true}
+        ctaShow={false}
         cta={{ title: "More Information", url: "", variant: "primary" }}
       />
       {/*<Button variant="success">Success</Button>
