@@ -45,6 +45,7 @@ class Header extends Component {
                         /* Return a single link */
                         return (
                           <LinkMenu
+                            key={link.title}
                             title={link.title}
                             url={link.url}
                             subItemShow={link.subItemShow}
