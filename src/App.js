@@ -7,6 +7,9 @@ import Header from "./components/header";
 // Main
 import Main from "./components/main";
 
+//Footer
+import Footer from "./components/footer";
+
 // Header Configs
 var HeaderConfig = {
   isShow: true,
@@ -51,6 +54,10 @@ var MainConfig = {
   }
 };
 
+var FooterConfig = {
+  isShow: true
+}
+
 function App() {
   return (
     <div className="App">
@@ -74,7 +81,10 @@ function App() {
         subTitleShow={MainConfig.subTitleShow}
         subTitle={MainConfig.subTitle}
       />
-    </div>
+    <Footer
+        isShow={FooterConfig.isShow}
+    />
+  </div>
   );
 }
 
