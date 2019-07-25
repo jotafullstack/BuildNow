@@ -5,10 +5,6 @@ import { Row, Col } from "react-bootstrap";
 import BuilderLayout from "../BuilderLayout";
 
 class Pricing extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     return (
       <BuilderLayout builder={this.props.builder}>

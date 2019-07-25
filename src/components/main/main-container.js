@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./main.css";
 
-import { Container, Row, Col, Image } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 
 /* Title Component */
 import Title from "./Title";

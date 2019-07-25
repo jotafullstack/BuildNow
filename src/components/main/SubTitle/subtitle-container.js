@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 
-import { Row, Col } from "react-bootstrap";
-
-import BuilderTooltip from "../BuilderTooltip";
-
 import BuilderLayout from "../BuilderLayout";
 
 class SubTitle extends Component {
