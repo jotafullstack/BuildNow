@@ -18,7 +18,7 @@ const Footer = () => {
               content.
             </p>
           </Col>
-          <Col md="6">
+          <Col xs={6} sm={6} md={6} lg={6}>
             <h5 className="title">Links</h5>
             <ul>
               <li className="list-unstyled">
@@ -39,8 +39,12 @@ const Footer = () => {
       </Container>
       <div className="footer-copyright text-center py-3">
         <Container fluid>
-          &copy; {new Date().getFullYear()} Copyright:{" "}
-          <a href="https://www.plugwithus.com"> Plug With Us </a>
+          <Row>
+            <Col xs={12} sm={12} md={12} lg={12}>
+              &copy; {new Date().getFullYear()} Copyright:{" "}
+              <a href="https://www.plugwithus.com"> Plug With Us </a>
+            </Col>
+          </Row>
         </Container>
       </div>
     </footer>
