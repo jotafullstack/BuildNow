@@ -14,7 +14,7 @@ import { Provider } from "react-redux";
 
 import store from "./store";
 
-import { Row, Col } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 
 var FooterConfig = {
   isShow: true
@@ -123,7 +123,7 @@ function App() {
               <Row
                 style={{
                   position: "relative",
-                  top: "25px",
+                  top: "3vh",
                   backgroundColor: "#ffffff",
                   width: "40vw",
                   height: "40vh",
@@ -187,10 +187,29 @@ function App() {
                   >
                     <Header />
                     <Main />
-                    <Main />
-                    <Main />
                     <Footer />
                   </div>
+                </Col>
+              </Row>
+              <Row
+                style={{
+                  position: "relative",
+                  top: "3vh",
+                  width: "34vw",
+                  height: "25vh"
+                }}
+              >
+                <Col xs={12} sm={12} md={12} lg={12}>
+                  <Button
+                    variant="success"
+                    style={{
+                      position: "absolute",
+                      right: "0px",
+                      bottom: "0px"
+                    }}
+                  >
+                    Next and Save
+                  </Button>
                 </Col>
               </Row>
             </Col>
