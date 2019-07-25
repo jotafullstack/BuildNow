@@ -1,6 +1,11 @@
 import { createStore } from "redux";
 
 const INITIAL_STATE = {
+  PageConfig: {
+    name: "Plug With Us",
+    heading: "Title",
+    subHeading: "SubTitle"
+  },
   HeaderConfig: {
     isShow: true,
     theme: "light",

@@ -15,7 +15,7 @@ function headerActive(isShow) {
   };
 }
 
-const Header = ({ HeaderConfig, dispatch }) => (
+const Header = ({ PageConfig, HeaderConfig, dispatch }) => (
   <header>
     {/* Show or Hide Header */}
     {HeaderConfig.isShow ? (
@@ -23,7 +23,7 @@ const Header = ({ HeaderConfig, dispatch }) => (
         {/* Brand Logo */}
         {HeaderConfig.brandShow ? (
           <Navbar.Brand href={HeaderConfig.brand.url}>
-            {HeaderConfig.brand.title}
+            {PageConfig.name}
           </Navbar.Brand>
         ) : null}
         {/* Add Menu Toogle in Mobile*/}
@@ -64,4 +64,7 @@ const Header = ({ HeaderConfig, dispatch }) => (
   </header>
 );
 
-export default connect(state => ({ HeaderConfig: state.HeaderConfig }))(Header);
+export default connect(state => ({
+  PageConfig: state.PageConfig,
+  HeaderConfig: state.HeaderConfig
+}))(Header);
