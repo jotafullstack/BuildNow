@@ -12,6 +12,10 @@ import SubTitle from "./SubTitle";
 /* Services Component */
 import Services from "./Services";
 
+/* Pricing Component */
+import Pricing from "./Pricing";
+
+
 class Main extends Component {
   /* Construtor for getting props and setting states */
   constructor(props) {
@@ -47,6 +51,7 @@ class Main extends Component {
           />
         ) : null}
         <Services builder={this.props.builder} />
+        <Pricing builder={this.props.builder} />
       </Container>
     );
   }
