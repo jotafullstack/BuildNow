@@ -11,7 +11,7 @@ class Services extends Component {
 
   render() {
     return (
-      <BuilderLayout builder={this.props.builder}>
+      <BuilderLayout builder={this.props.builder} typeComponent={"Services"}>
         <Row>
           <Col xs={12} sm={12} md={4} lg={4}>
             Serviço 1
