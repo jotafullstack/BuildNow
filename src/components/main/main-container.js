@@ -9,6 +9,9 @@ import Title from "./Title";
 /* Subtitle Component */
 import SubTitle from "./SubTitle";
 
+/* Services Component */
+import Services from "./Services";
+
 class Main extends Component {
   /* Construtor for getting props and setting states */
   constructor(props) {
@@ -43,6 +46,7 @@ class Main extends Component {
             description={this.props.subTitle.description}
           />
         ) : null}
+        <Services builder={this.props.builder} />
       </Container>
     );
   }
