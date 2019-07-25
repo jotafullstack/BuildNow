@@ -15,21 +15,12 @@ import Services from "./Services";
 /* Pricing Component */
 import Pricing from "./Pricing";
 
+import { connect } from "react-redux";
 
 class Main extends Component {
   /* Construtor for getting props and setting states */
   constructor(props) {
     super(props);
-    this.state = {
-      // For Show or Hide Component
-      isShow: this.props.isShow,
-      // Allow the Container to fill all of it's availble horizontal space.
-      fluid: this.props.fluid,
-      // For Show or Hide Title Component
-      titleShow: this.props.titleShow,
-      // For Show or Hide SubTitle Component
-      subTitleShow: this.props.subTitleShow
-    };
   }
 
   //  <Image src="holder.js/100px250" fluid />
@@ -37,24 +28,23 @@ class Main extends Component {
   /* Render Component */
   render() {
     return (
-      <Container fluid={this.state.fluid}>
-        {this.state.titleShow ? (
+      <Container fluid={this.props.MainConfig.fluid}>
+        {this.props.MainConfig.titleShow ? (
           <Title
-            builder={this.props.builder}
-            description={this.props.title.description}
+            builder={this.props.MainConfig.builder}
+            description={this.props.MainConfig.title.description}
           />
         ) : null}
-        {this.state.subTitleShow ? (
+        {this.props.MainConfig.subTitleShow ? (
           <SubTitle
-            builder={this.props.builder}
-            description={this.props.subTitle.description}
+            builder={this.props.MainConfig.builder}
+            description={this.props.MainConfig.subTitle.description}
           />
         ) : null}
-        <Services builder={this.props.builder} />
-        <Pricing builder={this.props.builder} />
+        <Services builder={this.props.MainConfig.builder} />
+        <Pricing builder={this.props.MainConfig.builder} />
       </Container>
     );
   }
 }
-
-export default Main;
+export default connect(state => ({ MainConfig: state.MainConfig }))(Main);

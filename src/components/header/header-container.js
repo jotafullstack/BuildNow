@@ -3,6 +3,8 @@ import "./header.css";
 
 import { Navbar, Nav, Button } from "react-bootstrap";
 
+import { connect } from "react-redux";
+
 /* LinkMenu Component Props its title, url, subItemShow, subItens */
 import LinkMenu from "./LinkMenu";
 
@@ -10,14 +12,6 @@ class Header extends Component {
   /* Construtor for getting props and setting states */
   constructor(props) {
     super(props);
-    /* For Show or Hide Component */
-    this.state = {
-      isShow: this.props.isShow,
-      brandShow: this.props.brandShow,
-      menuShow: this.props.menuShow,
-      linksShow: this.props.linksShow,
-      ctaShow: this.props.ctaShow
-    };
   }
 
   /* Render Component */
@@ -25,23 +19,23 @@ class Header extends Component {
     return (
       <header>
         {/* Show or Hide Header */}
-        {this.state.isShow ? (
-          <Navbar bg={this.props.theme} expand="lg">
+        {this.props.HeaderConfig.isShow ? (
+          <Navbar bg={this.props.HeaderConfig.theme} expand="lg">
             {/* Brand Logo */}
-            {this.state.brandShow ? (
-              <Navbar.Brand href={this.props.brand.url}>
-                {this.props.brand.title}
+            {this.props.HeaderConfig.brandShow ? (
+              <Navbar.Brand href={this.props.HeaderConfig.brand.url}>
+                {this.props.HeaderConfig.brand.title}
               </Navbar.Brand>
             ) : null}
             {/* Add Menu Toogle in Mobile*/}
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             {/* Show or hide links */}
-            {this.state.menuShow ? (
+            {this.props.HeaderConfig.menuShow ? (
               <Navbar.Collapse id="basic-navbar-nav">
                 {/* ml-auto para alinhar à direita, mr-auto para alinhar à esquerda */}
                 <Nav className="ml-auto">
-                  {this.state.linksShow
-                    ? this.props.links.map(link => {
+                  {this.props.HeaderConfig.linksShow
+                    ? this.props.HeaderConfig.links.map(link => {
                         /* Return a single link */
                         return (
                           <LinkMenu
@@ -55,9 +49,9 @@ class Header extends Component {
                       })
                     : null}
                   {/* Show or Hide Call To Action */}
-                  {this.state.ctaShow ? (
-                    <Button variant={this.props.cta.variant}>
-                      {this.props.cta.title}
+                  {this.props.HeaderConfig.ctaShow ? (
+                    <Button variant={this.props.HeaderConfig.cta.variant}>
+                      {this.props.HeaderConfig.cta.title}
                     </Button>
                   ) : null}
                 </Nav>
@@ -70,4 +64,4 @@ class Header extends Component {
   }
 }
 
-export default Header;
+export default connect(state => ({ HeaderConfig: state.HeaderConfig }))(Header);

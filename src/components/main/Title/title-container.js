@@ -2,7 +2,13 @@ import React, { Component } from "react";
 
 import BuilderLayout from "../BuilderLayout";
 
+import { connect } from "react-redux";
+
 class Title extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <BuilderLayout builder={this.props.builder} typeComponent={"Title"}>
@@ -12,4 +18,4 @@ class Title extends Component {
   }
 }
 
-export default Title;
+export default connect(state => ({ title: state }))(Title);
