@@ -1,20 +1,50 @@
-import React, { Component } from "react";
 import "./footer.css";
 
 import { connect } from "react-redux";
 
-class Footer extends Component {
-  render() {
-    return (
-      <footer className="">
-        <nav className="navbar fixed-bottom navbar-light bg-light">
-          <a className="navbar-brand" href="/">
-            Footer
-          </a>{" "}
-        </nav>{" "}
-      </footer>
-    );
-  }
-}
+import React from "react";
+
+import { Container, Row, Col } from "react-bootstrap";
+
+const Footer = () => {
+  return (
+    <footer color="blue" className="font-small pt-4 mt-4">
+      <Container fluid className="text-center text-md-left">
+        <Row>
+          <Col md="6">
+            <h5 className="title">Footer Content</h5>
+            <p>
+              Here you can use rows and columns here to organize your footer
+              content.
+            </p>
+          </Col>
+          <Col md="6">
+            <h5 className="title">Links</h5>
+            <ul>
+              <li className="list-unstyled">
+                <a href="#!">Link 1</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Link 2</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Link 3</a>
+              </li>
+              <li className="list-unstyled">
+                <a href="#!">Link 4</a>
+              </li>
+            </ul>
+          </Col>
+        </Row>
+      </Container>
+      <div className="footer-copyright text-center py-3">
+        <Container fluid>
+          &copy; {new Date().getFullYear()} Copyright:{" "}
+          <a href="https://www.plugwithus.com"> Plug With Us </a>
+        </Container>
+      </div>
+    </footer>
+  );
+};
 
 export default connect(state => ({ FooterConfig: state.FooterConfig }))(Footer);
