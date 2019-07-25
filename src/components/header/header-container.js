@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./header.css";
 
-import { Navbar, Nav, Button } from "react-bootstrap";
+import { Navbar, Nav, Button, Modal } from "react-bootstrap";
 
 import { connect } from "react-redux";
 

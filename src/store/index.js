@@ -49,7 +49,6 @@ const INITIAL_STATE = {
 function reducer(state = INITIAL_STATE, action) {
   console.log(action);
   if (action.type === "HEADER_ACTIVE") {
-    console.log(state);
     return {
       ...state,
       HeaderConfig: {
