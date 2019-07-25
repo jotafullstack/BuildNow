@@ -4,7 +4,7 @@ import { Row, Col } from "react-bootstrap";
 
 import BuilderTooltip from "../BuilderTooltip";
 
-class Title extends Component {
+class BuilderLayout extends Component {
   constructor(props) {
     super(props);
     this.state = { over: false };
@@ -28,10 +28,24 @@ class Title extends Component {
         onMouseEnter={() => this.mouseOver()}
       >
         <Col xs={12} sm={12} md={12} lg={12}>
-          <h1 style={{ fontSize: "7.5rem" }}>{this.props.description}</h1>
+          {this.props.children}
           {this.state.over && this.props.builder ? <BuilderTooltip /> : null}
         </Col>
       </Row>
+    );
+  }
+}
+
+class Title extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    return (
+      <BuilderLayout builder={this.props.builder}>
+        <h1 style={{ fontSize: "7.5rem" }}>{this.props.description}</h1>
+      </BuilderLayout>
     );
   }
 }
