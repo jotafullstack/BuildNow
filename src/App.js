@@ -39,8 +39,8 @@ function App() {
           <Row
             style={{
               backgroundColor: "#f7f9fa",
-              width: "50vw",
-              height: "50vh"
+              width: "70vw",
+              height: "70vh"
             }}
           >
             <Col xs={6} sm={6} md={6} lg={6}>
@@ -124,21 +124,78 @@ function App() {
                 style={{
                   position: "relative",
                   top: "25px",
-                  backgroundColor: "gray",
-                  width: "28vw",
-                  height: "26vh"
+                  backgroundColor: "#ffffff",
+                  width: "40vw",
+                  height: "40vh",
+                  border: "1px solid #80808042"
                 }}
               >
                 <Col xs={12} sm={12} md={12} lg={12}>
-                  A
+                  <Row
+                    style={{
+                      padding: "1px 1px",
+                      borderRadius: "3px 3px 0 0",
+                      backgroundImage:
+                        "linear-gradient(-180deg, rgb(255, 255, 255), rgb(210, 210, 210))",
+                      position: "relative",
+                      display: "flex",
+                      alignItems: "center",
+                      textAlign: "left"
+                    }}
+                  >
+                    <Col xs={12} sm={12} md={12} lg={12}>
+                      <i
+                        style={{
+                          display: "inline-block",
+                          width: "9px",
+                          height: "9px",
+                          marginRight: "4px",
+                          borderRadius: "50%",
+                          background: "gray"
+                        }}
+                      ></i>
+                      <i
+                        style={{
+                          display: "inline-block",
+                          width: "9px",
+                          height: "9px",
+                          marginRight: "4px",
+                          borderRadius: "50%",
+                          background: "gray"
+                        }}
+                      ></i>
+                      <i
+                        style={{
+                          display: "inline-block",
+                          width: "9px",
+                          height: "9px",
+                          marginRight: "4px",
+                          borderRadius: "50%",
+                          background: "gray"
+                        }}
+                      ></i>
+                    </Col>
+                  </Row>
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: "0px",
+                      height: "calc(37vh)",
+                      overflow: "auto",
+                      width: "100%"
+                    }}
+                  >
+                    <Header />
+                    <Main />
+                    <Main />
+                    <Main />
+                    <Footer />
+                  </div>
                 </Col>
               </Row>
             </Col>
           </Row>
         </div>
-        {/*<Header />
-        <Main />
-        <Footer />*/}
       </Provider>
     </div>
   );
