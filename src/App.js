@@ -127,7 +127,8 @@ function App() {
                   backgroundColor: "#ffffff",
                   width: "40vw",
                   height: "40vh",
-                  border: "1px solid #80808042"
+                  border: "1px solid #80808042",
+                  boxShadow: "10px 10px 5px -5px rgba(176,176,176,1)"
                 }}
               >
                 <Col xs={12} sm={12} md={12} lg={12}>
