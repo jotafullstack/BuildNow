@@ -4,18 +4,12 @@ import BuilderLayout from "../BuilderLayout";
 
 import { connect } from "react-redux";
 
-class Title extends Component {
-  constructor(props) {
-    super(props);
-  }
+const Title = ({ PageConfig }) => {
+  return (
+    <BuilderLayout builder={true} typeComponent={"Title"}>
+      <h1 style={{ fontSize: "7.5rem" }}>{PageConfig.title}</h1>
+    </BuilderLayout>
+  );
+};
 
-  render() {
-    return (
-      <BuilderLayout builder={this.props.builder} typeComponent={"Title"}>
-        <h1 style={{ fontSize: "7.5rem" }}>{this.props.description}</h1>
-      </BuilderLayout>
-    );
-  }
-}
-
-export default connect(state => ({ title: state }))(Title);
+export default connect(state => ({ PageConfig: state.PageConfig }))(Title);

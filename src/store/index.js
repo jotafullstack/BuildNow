@@ -2,9 +2,9 @@ import { createStore } from "redux";
 
 const INITIAL_STATE = {
   PageConfig: {
-    name: "Plug With Us",
-    heading: "Title",
-    subHeading: "SubTitle"
+    name: "",
+    heading: "",
+    subHeading: ""
   },
   HeaderConfig: {
     isShow: true,
@@ -59,6 +59,36 @@ function reducer(state = INITIAL_STATE, action) {
       HeaderConfig: {
         ...state.HeaderConfig,
         isShow: !action.isShow
+      }
+    };
+  }
+  // Mudar nome do logo / website
+  if (action.type === "CHANGE_PAGECONFIG_NAME") {
+    return {
+      ...state,
+      PageConfig: {
+        ...state.PageConfig,
+        name: action.name
+      }
+    };
+  }
+
+  if (action.type === "CHANGE_PAGECONFIG_HEADING") {
+    return {
+      ...state,
+      PageConfig: {
+        ...state.PageConfig,
+        heading: action.heading
+      }
+    };
+  }
+
+  if (action.type === "CHANGE_PAGECONFIG_SUBHEADING") {
+    return {
+      ...state,
+      PageConfig: {
+        ...state.PageConfig,
+        subHeading: action.subHeading
       }
     };
   }

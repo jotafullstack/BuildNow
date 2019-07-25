@@ -12,9 +12,30 @@ import Main from "../../../components/main";
 import Footer from "../../../components/footer";
 
 // Row, Col and Button
-import { Row, Col, Button } from "react-bootstrap";
+import { Row, Col, Button, Form } from "react-bootstrap";
 
-const FirstStep = ({ PageConfig }) => {
+function changePageConfigName(name) {
+  return {
+    type: "CHANGE_PAGECONFIG_NAME",
+    name
+  };
+}
+
+function changePageConfigHeading(heading) {
+  return {
+    type: "CHANGE_PAGECONFIG_HEADING",
+    heading
+  };
+}
+
+function changePageConfigSubHeading(subHeading) {
+  return {
+    type: "CHANGE_PAGECONFIG_SUBHEADING",
+    subHeading
+  };
+}
+
+const FirstStep = ({ PageConfig, dispatch }) => {
   return (
     <div
       style={{
@@ -56,7 +77,13 @@ const FirstStep = ({ PageConfig }) => {
               Name or Logo
             </Col>
             <Col xs={6} sm={6} md={6} lg={6}>
-              {PageConfig.name}
+              <Form.Control
+                type="text"
+                placeholder={PageConfig.name}
+                onChange={event =>
+                  dispatch(changePageConfigName(event.target.value))
+                }
+              />
             </Col>
           </Row>
           <Row style={{ position: "relative", top: "25px" }}>
@@ -69,7 +96,13 @@ const FirstStep = ({ PageConfig }) => {
               Heading
             </Col>
             <Col xs={6} sm={6} md={6} lg={6}>
-              {PageConfig.heading}
+              <Form.Control
+                type="text"
+                placeholder={PageConfig.heading}
+                onChange={event =>
+                  dispatch(changePageConfigHeading(event.target.value))
+                }
+              />
             </Col>
           </Row>
           <Row style={{ position: "relative", top: "25px" }}>
@@ -82,7 +115,13 @@ const FirstStep = ({ PageConfig }) => {
               Subheading
             </Col>
             <Col xs={6} sm={6} md={6} lg={6}>
-              {PageConfig.subHeading}
+              <Form.Control
+                type="text"
+                placeholder={PageConfig.subHeading}
+                onChange={event =>
+                  dispatch(changePageConfigSubHeading(event.target.value))
+                }
+              />
             </Col>
           </Row>
           <Row style={{ position: "relative", top: "25px" }}>
