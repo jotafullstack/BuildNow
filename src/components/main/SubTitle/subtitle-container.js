@@ -2,14 +2,14 @@ import React, { Component } from "react";
 
 import BuilderLayout from "../BuilderLayout";
 
-class SubTitle extends Component {
-  render() {
-    return (
-      <BuilderLayout builder={this.props.builder} typeComponent={"Subtitle"}>
-        <h2 style={{ fontSize: "2.5rem" }}>{this.props.description}</h2>
-      </BuilderLayout>
-    );
-  }
-}
+import { connect } from "react-redux";
 
-export default SubTitle;
+const SubTitle = ({ PageConfig }) => {
+  return (
+    <BuilderLayout builder={true} typeComponent={"Title"}>
+      <h2 style={{ fontSize: "2.5rem" }}>{PageConfig.subHeading}</h2>
+    </BuilderLayout>
+  );
+};
+
+export default connect(state => ({ PageConfig: state.PageConfig }))(SubTitle);
