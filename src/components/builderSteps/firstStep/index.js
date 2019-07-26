@@ -216,10 +216,100 @@ const FirstStep = ({ PageConfig, dispatch }) => {
               position: "relative",
               top: "3vh",
               width: "34vw",
-              height: "25vh"
+              height: "25vh",
+              border: "1px solid gray"
             }}
           >
             <Col xs={12} sm={12} md={12} lg={12}>
+              <Row>
+                <Col
+                  xs={12}
+                  sm={12}
+                  md={12}
+                  lg={12}
+                  style={{ display: "flex", padding: "10px 10px 10px 10px" }}
+                >
+                  <div
+                    style={{
+                      backgroundColor: "#fff",
+                      marginRight: "10px",
+                      display: "flex",
+                      borderRadius: "50%",
+                      cursor: "pointer",
+                      width: "36px",
+                      height: "36px",
+                      position: "relative",
+                      flexShrink: "0"
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      backgroundColor: "#353740",
+                      marginRight: "10px",
+                      display: "flex",
+                      borderRadius: "50%",
+                      cursor: "pointer",
+                      width: "36px",
+                      height: "36px",
+                      position: "relative",
+                      flexShrink: "0"
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      backgroundColor: "#3aafa2",
+                      marginRight: "10px",
+                      display: "flex",
+                      borderRadius: "50%",
+                      cursor: "pointer",
+                      width: "36px",
+                      height: "36px",
+                      position: "relative",
+                      flexShrink: "0"
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      backgroundColor: "#1b7068",
+                      marginRight: "10px",
+                      display: "flex",
+                      borderRadius: "50%",
+                      cursor: "pointer",
+                      width: "36px",
+                      height: "36px",
+                      position: "relative",
+                      flexShrink: "0"
+                    }}
+                  ></div>
+                  <div
+                    style={{
+                      background: "rgba(0,0,0,.1)",
+                      marginRight: "10px",
+                      display: "flex",
+                      borderRadius: "50%",
+                      cursor: "pointer",
+                      width: "36px",
+                      height: "36px",
+                      position: "relative",
+                      flexShrink: "0"
+                    }}
+                  >
+                    <span
+                      style={{
+                        fontSize: "24px",
+                        textAlign: "center",
+                        lineHeight: "32px",
+                        color: "#8F9496",
+                        display: "block",
+                        width: "100%",
+                        height: "100%"
+                      }}
+                    >
+                      +
+                    </span>
+                  </div>
+                </Col>{" "}
+              </Row>
               <Button
                 variant="success"
                 style={{

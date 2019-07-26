@@ -2,9 +2,9 @@ import { createStore } from "redux";
 
 const INITIAL_STATE = {
   PageConfig: {
-    name: "",
-    heading: "",
-    subHeading: ""
+    name: "Logo",
+    heading: "Title",
+    subHeading: "SubTitle"
   },
   HeaderConfig: {
     isShow: true,

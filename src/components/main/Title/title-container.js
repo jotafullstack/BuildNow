@@ -7,7 +7,7 @@ import { connect } from "react-redux";
 const Title = ({ PageConfig }) => {
   return (
     <BuilderLayout builder={true} typeComponent={"Title"}>
-      <h1 style={{ fontSize: "7.5rem" }}>{PageConfig.title}</h1>
+      <h1 style={{ fontSize: "7.5rem" }}>{PageConfig.heading}</h1>
     </BuilderLayout>
   );
 };
