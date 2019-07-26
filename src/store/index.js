@@ -1,6 +1,9 @@
 import { createStore } from "redux";
 
 const INITIAL_STATE = {
+  PreviewConfig: {
+    fullPreview: true
+  },
   PageConfig: {
     name: "Logo",
     heading: "Title",
@@ -52,13 +55,13 @@ const INITIAL_STATE = {
 };
 
 function reducer(state = INITIAL_STATE, action) {
-  console.log(action);
-  if (action.type === "HEADER_ACTIVE") {
+  console.log(state);
+  if (action.type === "FULL_PREVIEW_ACTIVE") {
     return {
       ...state,
-      HeaderConfig: {
-        ...state.HeaderConfig,
-        isShow: !action.isShow
+      PreviewConfig: {
+        ...state.PreviewConfig,
+        fullPreview: !action.active
       }
     };
   }

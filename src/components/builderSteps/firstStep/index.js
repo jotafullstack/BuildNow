@@ -35,7 +35,14 @@ function changePageConfigSubHeading(subHeading) {
   };
 }
 
-const FirstStep = ({ PageConfig, dispatch }) => {
+function fullPreviewActive(active) {
+  return {
+    type: "FULL_PREVIEW_ACTIVE",
+    active
+  };
+}
+
+const FirstStep = ({ PreviewConfig, PageConfig, dispatch }) => {
   return (
     <div
       style={{
@@ -317,6 +324,9 @@ const FirstStep = ({ PageConfig, dispatch }) => {
                   right: "0px",
                   bottom: "0px"
                 }}
+                onClick={() =>
+                  dispatch(fullPreviewActive(PreviewConfig.fullPreview))
+                }
               >
                 Next and Save
               </Button>
@@ -328,4 +338,7 @@ const FirstStep = ({ PageConfig, dispatch }) => {
   );
 };
 
-export default connect(state => ({ PageConfig: state.PageConfig }))(FirstStep);
+export default connect(state => ({
+  PreviewConfig: state.PreviewConfig,
+  PageConfig: state.PageConfig
+}))(FirstStep);

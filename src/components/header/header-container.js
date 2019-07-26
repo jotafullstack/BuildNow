@@ -8,14 +8,14 @@ import { connect } from "react-redux";
 /* LinkMenu Component Props its title, url, subItemShow, subItens */
 import LinkMenu from "./LinkMenu";
 
-function headerActive(isShow) {
+function fullPreviewActive(active) {
   return {
-    type: "HEADER_ACTIVE",
-    isShow
+    type: "FULL_PREVIEW_ACTIVE",
+    active
   };
 }
 
-const Header = ({ PageConfig, HeaderConfig, dispatch }) => (
+const Header = ({ PreviewConfig, PageConfig, HeaderConfig, dispatch }) => (
   <header>
     {/* Show or Hide Header */}
     {HeaderConfig.isShow ? (
@@ -51,7 +51,9 @@ const Header = ({ PageConfig, HeaderConfig, dispatch }) => (
               {HeaderConfig.ctaShow ? (
                 <Button
                   variant={HeaderConfig.cta.variant}
-                  onClick={() => dispatch(headerActive(HeaderConfig.isShow))}
+                  onClick={() =>
+                    dispatch(fullPreviewActive(PreviewConfig.fullPreview))
+                  }
                 >
                   {HeaderConfig.cta.title}
                 </Button>
@@ -65,6 +67,7 @@ const Header = ({ PageConfig, HeaderConfig, dispatch }) => (
 );
 
 export default connect(state => ({
+  PreviewConfig: state.PreviewConfig,
   PageConfig: state.PageConfig,
   HeaderConfig: state.HeaderConfig
 }))(Header);

@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
 
-import FirstStep from "./components/builderSteps/firstStep";
+import Builder from "./components/builderSteps/builder";
 
 import { Provider } from "react-redux";
 
@@ -11,14 +11,16 @@ var FooterConfig = {
   isShow: true
 };
 
-function App() {
+const App = ({ PageConfig, dispatch }) => {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <FirstStep />
-      </Provider>
+    <div>
+      <div className="App">
+        <Provider store={store}>
+          <Builder />
+        </Provider>
+      </div>
     </div>
   );
-}
+};
 
 export default App;
